@@ -1,19 +1,21 @@
 package com.github.tomato.core;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.lang.reflect.Method;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
+
 import com.github.tomato.annotation.Repeat;
 import com.github.tomato.annotation.TomatoToken;
 import com.github.tomato.support.DefaultTokenProviderSupport;
 import com.github.tomato.support.Phone;
 import com.github.tomato.support.TokenProviderSupport;
 import com.github.tomato.support.User;
-import org.junit.Assert;
-import org.junit.Test;
-import org.springframework.mock.web.MockHttpServletRequest;
-
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
 
 /**
  * @author liuxin
@@ -52,7 +54,7 @@ public class TomatoInterceptorTest {
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
         mockHttpServletRequest.setParameter("name", expectedValue);
         String tomatoToken = tokenProviderSupport.findTomatoToken(test, new Object[]{mockHttpServletRequest});
-        Assert.assertEquals("ts:" + expectedValue, tomatoToken);
+        Assertions.assertEquals("ts:" + expectedValue, tomatoToken);
     }
 
     @Test
@@ -63,7 +65,7 @@ public class TomatoInterceptorTest {
         String tomatoToken = tokenProviderSupport.findTomatoToken(test, new Object[]{user});
         // name = lx
         System.out.println(tomatoToken);
-        Assert.assertEquals(user.getName(), tomatoToken);
+        Assertions.assertEquals(user.getName(), tomatoToken);
     }
 
     @Test
@@ -74,7 +76,7 @@ public class TomatoInterceptorTest {
         String tomatoToken = tokenProviderSupport.findTomatoToken(test, new Object[]{user});
         // phone = 137123123
         System.out.println(tomatoToken);
-        Assert.assertEquals(user.getPhone().getPhoneNo(), tomatoToken);
+        Assertions.assertEquals(user.getPhone().getPhoneNo(), tomatoToken);
     }
 
     /**

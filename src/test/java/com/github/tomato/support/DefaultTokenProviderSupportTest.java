@@ -1,17 +1,12 @@
 package com.github.tomato.support;
 
-import com.github.tomato.annotation.Repeat;
-import com.github.tomato.annotation.TomatoToken;
-import org.junit.Test;
+import java.util.Objects;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
-import org.springframework.mock.web.MockHttpServletRequest;
-
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
-import java.util.Objects;
 
 /**
  * @author liuxin

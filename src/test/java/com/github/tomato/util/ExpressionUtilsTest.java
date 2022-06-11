@@ -1,8 +1,9 @@
 package com.github.tomato.util;
 
+import org.junit.jupiter.api.Test;
+
 import com.github.tomato.support.Phone;
 import com.github.tomato.support.User;
-import org.junit.Test;
 
 
 /**

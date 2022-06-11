@@ -1,23 +1,24 @@
 package com.github.tomato.support;
 
-import com.github.tomato.annotation.TomatoToken;
-import com.github.tomato.util.BaseTypeTools;
-import com.github.tomato.util.ExpressionUtils;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.ReflectionUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Objects;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.github.tomato.annotation.TomatoToken;
+import com.github.tomato.util.BaseTypeTools;
+import com.github.tomato.util.ExpressionUtils;
 
 /**
  * @author liuxin
  * 2020-01-03 22:30
  */
-@Slf4j
 public class DefaultTokenProviderSupport extends AbstractTokenProvider {
+  private static final Logger log = LoggerFactory.getLogger(DefaultTokenProviderSupport.class);
 
 
     /**

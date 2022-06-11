@@ -5,7 +5,6 @@ import com.github.tomato.support.DefaultRepeatToInterceptSupport;
 import com.github.tomato.support.DefaultTokenProviderSupport;
 import com.github.tomato.support.RepeatToInterceptSupport;
 import com.github.tomato.support.TokenProviderSupport;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -20,7 +19,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  * @author liuxin
  * 2019-12-29 22:02
  */
-@Slf4j
 @Configuration
 @ConditionalOnClass(RedisAutoConfiguration.class)
 public class TomatoAutoConfiguration {

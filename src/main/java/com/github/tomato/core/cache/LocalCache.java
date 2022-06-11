@@ -1,19 +1,23 @@
 package com.github.tomato.core.cache;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.lang.ref.SoftReference;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author liuxin
  * 2021/12/10 9:03 下午
  */
-@Slf4j
 public class LocalCache {
+  private static final Logger log = LoggerFactory.getLogger(LocalCache.class);
 
     private static final String EMPTY = "-";
 

@@ -1,7 +1,9 @@
 package com.github.tomato.core;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.github.tomato.core.cache.LocalCache;
-import lombok.extern.slf4j.Slf4j;
 
 
 /**
@@ -11,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  * @author liuxin
  * 2021/12/10 8:32 下午
  */
-@Slf4j
 public class LocalCacheIdempotentTemplate extends AbstractIdempotent {
+  private static final Logger log = LoggerFactory.getLogger(LocalCacheIdempotentTemplate.class);
 
     /**
      * 本地缓存

@@ -1,9 +1,11 @@
 package com.github.tomato.core;
 
-import com.github.tomato.util.Md5Tools;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.function.Supplier;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.github.tomato.util.Md5Tools;
 
 /**
  * https://tomato.springlearn.cn/
@@ -11,9 +13,10 @@ import java.util.function.Supplier;
  * @author liuxin
  * 2019-12-29 22:37
  */
-@Slf4j
-public abstract class AbstractIdempotent implements Idempotent {
 
+public abstract class AbstractIdempotent implements Idempotent {
+  private static final Logger log = LoggerFactory.getLogger(AbstractIdempotent.class);
+  
     private String prefix = "TMT_";
 
     /**
