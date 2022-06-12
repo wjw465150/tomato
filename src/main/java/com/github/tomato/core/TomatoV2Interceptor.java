@@ -63,7 +63,7 @@ public class TomatoV2Interceptor {
             //2. 获取唯一键
             tomatoToken = tokenProviderSupport.findTomatoToken(method, args);
             // 如果为空直接报错
-            if (StringUtils.isEmpty(tomatoToken) || Objects.isNull(repeat)) {
+            if (!StringUtils.hasLength(tomatoToken) || Objects.isNull(repeat)) {
                 throw new ElSyntaxException("el语法错误:[" + Arrays.asList(args) + "]");
             }
             //3. 唯一键键不存在,直接执行
@@ -90,7 +90,7 @@ public class TomatoV2Interceptor {
             throw new RuntimeException(throwable);
         } finally {
             StaticContext.clear();
-            if (!StringUtils.isEmpty(tomatoToken)) {
+            if (StringUtils.hasLength(tomatoToken)) {
                 // 移除本次方法锁
                 idempotent.delIdempotent(methodLockTomatoToken(method, tomatoToken));
             }
