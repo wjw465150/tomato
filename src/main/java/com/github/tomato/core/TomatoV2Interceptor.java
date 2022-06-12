@@ -12,6 +12,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.core.annotation.Order;
 import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Constructor;
@@ -27,6 +28,7 @@ import java.util.concurrent.TimeUnit;
  * @author liuxin
  */
 @Aspect
+@Order(1)
 public class TomatoV2Interceptor {
 
     private Idempotent idempotent;
